@@ -2,5 +2,28 @@
 \documentclass[../../main.tex]{subfiles}
 \begin{document}
 
+3.  What factors do you think will affect the speed and reliability with which your robot can execute the Sokoban solution?  How will you evaluate and optimise them? (Or, will you optimise them, in fact?)
 	
+\subsection{What factors will affect the speed and reliability of the robot?}%
+\label{sub:what_factors_will_affect_the_speed_and_reliability_of_the_robot_}
+
+\begin{itemize}
+	\item As the robot relies on color sensors, its line tracking ability will be susceptible to
+		noise from changing lighting conditions.\\
+		This might be optimized by have a early configurations stage where the robot will look for
+		contrasts and use the found values for the execution of the solution.
+	\item The speed of the robot is mostly affected by its ability to accelerate and decelerate to
+		quickly and safely traverse corners. Also to not tip over cans if hitting them at to great a
+		speed.\\
+		This can initially be solved by using a PID controller and optimised later using state estimators
+		and observers. If it seems that the wheels do not have enough traction, and extra set wheels
+		could be mounted on the robot.
+	\item The built quality of the robot is important as the robot might fall apart if it is not
+		constructed robustly
+	\item 
+\end{itemize}
+
+
+
+
 \end{document}
