@@ -5,13 +5,14 @@
 \subsection{Sensing}%
 \label{sub:sensing}
 
+It's critical that the robot is able to detect the two black lines that denote a tile. This is the foundation of the robot's ability collect feedback to where it is on the map.
+The robot should also be able to detect whether it is pushing a can. This is not strictly needed as the path is not determined by the sensor, however, it can be nice for sanity checks.
+
 \subsubsection{Map}%
 \label{ssub:map}
 
-
-The robot should be able to detect either side of a line to evaluate whether or not the robot
-i following the lines on the map.
-
+The ability to accept input in the form of left, up, down and right, and because of this is able to complete a sokoban map.
+The robot should be able to detect either side of a line to evaluate whether or not the robot is following the lines on the map.
 
 \subsubsection{Tomat puré can}%
 \label{ssub:tomat_pure_can}
@@ -21,20 +22,25 @@ For redundant checks to robot should be able to detect whether or not i is in co
 \subsection{Movement}%
 \label{sub:movement}
 
+The robot must have the ability to move around on a sokoban map. It must have various qualities that enables it to complete the objective of sokoban.
+
+\subsubsection{Precision}%
+\label{ssub:precision}
+
+The robot should be precise with its movement as needing to recover is an expensive procedure in regards to time.
+The ability to move with a can and somewhat precisely place it on a tile is also critical to be able to complete the objective of sokoban. It is also needed that the robot is able to capture a can with its inlet.
 
 \subsubsection{Agility}%
 \label{ssub:agility}
 
 The robot should not be too long as to not be able to turn $180^{\circ}$ between to cans.
 
+The robot should have the ability to turn and not interfere with a can adjacent to it while also adhering to the rules of sokoban. 
+
 \subsection{Speed}%
 \label{sub:speed}
 
-The robot should be to maintain a high constant velocity reliably.
-
-
-
-
+The robot should be able to maintain a high constant velocity reliably. Ideally the robot should be able to execute a solution of 120 steps in the span of a few minutes.
 
 
 
