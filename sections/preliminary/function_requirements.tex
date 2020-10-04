@@ -5,13 +5,14 @@
 \subsection{Sensing}%
 \label{sub:sensing}
 
-It's critical that the robot is able to detect the two black lines that denote a tile. This is the foundation of the robot's ability collect feedback to where it is on the map.
+This section is about the functional requirements of the robot so that it is able to understand its environment. \\
+It is critical that the robot is able to detect the two black lines that denote a tile. This is the foundation of the robot's ability to collect feedback about where it is on the map.
 The robot should also be able to detect whether it is pushing a can. This is not strictly needed as the path is not determined by the sensor, however, it can be nice for sanity checks.
 
 \subsubsection{Map}%
 \label{ssub:map}
 
-The ability to accept input in the form of left, up, down and right, and because of this is able to complete a sokoban map.
+The ability to accept input in the form of left, up, down and right, and because of this, is able to complete a sokoban map.
 The robot should be able to detect either side of a line to evaluate whether or not the robot is following the lines on the map.
 
 \subsubsection{Tomat puré can}%
@@ -22,7 +23,8 @@ For redundant checks to robot should be able to detect whether or not it is in c
 \subsection{Movement}%
 \label{sub:movement}
 
-The robot must have the ability to move around on a sokoban map. It must have various qualities that enables it to complete the objective of sokoban.
+The movement of the robot is another important aspect and will cover aspects such as the precision of the movement and how the robot is expected to handle certain surfaces. \\
+A fundamental requirement is that the robot must have the ability to move around on a sokoban map. It must have various qualities that enables it to complete the objective of sokoban.
 
 \subsubsection{Precision}%
 \label{ssub:precision}
@@ -33,9 +35,8 @@ The ability to move with a can and somewhat precisely place it on a tile is also
 \subsubsection{Agility}%
 \label{ssub:agility}
 
-The robot should not be too long as to not be able to turn $180^{\circ}$ between to cans.
-
-The robot should have the ability to turn and not interfere with a can or touch another tile adjacent to it. This is to ensure that the robot is adhering to the rules of sokoban. 
+The robot should have the ability to turn and not interfere with a can or touch another tile adjacent to it. This is to ensure that the robot is adhering to the rules of sokoban. \\
+When the robot turns after detecting a new tile it should be able to rotate and be positioned correctly so that it is able to follow the black line towards the next tile.
 
 \subsection{Speed}%
 \label{sub:speed}
