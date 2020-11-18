@@ -2,15 +2,27 @@
 \documentclass[../../main.tex]{subfiles}
 \begin{document}
 
+Breadth first mostly makes sense when the distance between nodes are equal.
 
-\begin{itemize}
-	\item States
-	\item Scaleability
- 	\begin{itemize}
- 		\item Time
-		\item Memmory
- 	\end{itemize}
-\end{itemize}
+This breadth first solution generates a new state for each player step.
+
+The worst case states generated can be caluculated as:
+
+\begin{equation}
+	\textrm{empty squares}^{ \textrm{Number of boxes}}
+\end{equation}
+
+This infers that the number of boxes is the determining factor for the size
+of the generated tree from breadth first search.
+
+The worst case time complexity can be calculated as
+
+\begin{equation}
+	4^{  \left(  \textrm{Empty Squares} ^{ \textrm{Number of Boxes}}  \right)   }
+\end{equation}
+
+This will probably always be lower as it is not always possible to move in all 4 direction.
+
 
 	
 \end{document}
