@@ -5,10 +5,28 @@
 
 \begin{itemize}
 	\item States
-	\item Scaleability
+	
+	Storing a state which includes all the box positions and the player position is required to have sufficient information about a state. A state is called a node in this case.
+	The state is stored in a dictionary where the key is a string of the levels layout. The node object itself is stored as the value.
+	
+	\item Scalability
+	
+	The most basic functionality regarding scalability is to prune duplicate states. This means that we have to store all the previous states and when we add a new state it is checked whether it has already been discovered.
+	To further increase scalability there has to be some basic deadlock detection which is able to reduce the amount of nodes created. This is for example done by looking at the pairs of adjacent tiles and if there is a pair of walls on the x and y axis and the tile is not a goal the state is discarded. This simple deadlock detection is able to reduce the amount of nodes generated significantly.
+	
  	\begin{itemize}
- 		\item Time
-		\item Memmory
+ 		\item
+ 		
+ 		Tests were made on numerous levels to get a better understanding of how 
+ 		
+ 		level 55 has a time of 441 seconds
+ 		
+		\item Memory
+		
+		As A* creates fewer states it will also use less memory. 
+		
+		level 55 has a memory consumption of 1.7 GB
+		
  	\end{itemize}
 \end{itemize}
 	
