@@ -28,7 +28,7 @@
 	\item Heuristics
 	
 	As A* uses heuristics to choose what node to discover next there should be careful considerations as to how a node is 			getting evaluated. As the goal is not simply to move the player to a specific location, but rather move multiple boxes in 		a particular way so they end up on a goal.
-	Manhatten distance has been used for the heuristic since sokoban is based on a grid and there is no diagonal movement. 			Manhatten distance is the total number of tiles moved horizontally and vertically to reach the target tile from the 			current tile. 
+	Manhatten distance has been used for the heuristic since sokoban is based on a grid and there is no diagonal movement. 			Manhatten distance is the total number of tiles moved horizontally and vertically to reach the target tile from the 			current tile. Another requirement is that the heuristic function must be admissible, which means it can never overestimate 	the cost to reach the goal. The reason for the admissible requirement is that it is critical to find the optimal path to 		the goal from the start position.
 	
 	
 	
