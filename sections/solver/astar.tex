@@ -2,15 +2,15 @@
 \documentclass[../../maint.tex]{subfiles}
 \begin{document}
 
-\subsection{Representation}
+\subsubsection{Representation}
 
 In A* a graph representation is used instead of a tree and a dictionary is kept to keep track of what node the next one was accessed through.
 
-\subsection{States}
+\subsubsection{States}
 
 Storing a state which includes all the box positions stored in a list and the player position is required to have 				sufficient 	information about a state. A state is called a node in this case. The state is stored in a dictionary where 		the key is a string of the levels layout. The node object itself is stored as the value. It is highly desirable that a 			state has a unique board position and a node also stores what node its parent and children are. 
 
-\subsection{Scalability}
+\subsubsection{Scalability}
 
 The most basic functionality regarding scalability is to prune duplicate states. This means that we have to store all the 		previous states and when we add a new state it is checked whether it has already been discovered.
 	
@@ -19,12 +19,12 @@ To further increase scalability there has to be some basic deadlock detection wh
 	
 The map provided on blackboard generated 1.3 million nodes before any deadlock detection was enabled while after the nodes 	generated was reduced to 200000. There is definitely still ways to further reduce the amount of nodes generated.
 
-\subsection{Heuristics}
+\subsubsection{Heuristics}
 
 As A* uses heuristics to choose what node to discover next there should be careful considerations as to how a node is 			getting evaluated. The goal is not simply to move the player to a specific location, but rather move multiple boxes in 		a particular way so they end up on a goal.
 Manhatten distance has been used for the heuristic since sokoban is based on a grid and there is no diagonal movement. 			Manhatten distance is the total number of tiles moved horizontally and vertically to reach the target tile from the 			current tile. Another requirement is that the heuristic function must be admissible, which means it can never overestimate 	the cost to reach the goal. The reason for the admissible requirement is that it is critical to find the optimal path to 		the goal from the start position.
 
-\subsection{Solver results}
+\subsubsection{Solver results}
 
  \begin{itemize}
 
