@@ -13,7 +13,19 @@ When a path is constructed it has to be accounted for that there is a branching 
 
 The problem is created in the same manner in both solvers. It is required that a solution is defined which is of course that all boxes are on a goal. The solution is then compared to the hash as every node is visited. Goals, boxes and the player is also created based on the level string. Hashes or the dictionary key are also created in the same way between the solvers. 
 
-Generating children follows the same idea, however, there is some important differences for the A-star implementation. When generating children of a node, a new child node is found by adding each of the four possible moves to the nodes current position. It is also here some basic deadlock functionality has been implemented to reduce the amount of essentially useless nodes.
+Generating children follows the same idea, however, there is some important differences for the A-star implementation which will be discussed in its own section. When generating children of a node, a new child node is found by adding each of the four possible moves to the nodes current position. It is also here some basic deadlock functionality has been implemented to reduce the amount of nodes that there is no use for. The simple deadlock detection is shown in the figure below.
 
+\begin{figure}[h]
+	\centering
+
+	\subfloat[][Deadlock showcase]{
+		\includegraphics[width=0.4\linewidth]{images/basic_deadlock_detection.png}
+	\label{fig:images/basic_deadlock_detection}
+	}
+	\caption{D are states that is pruned}
+	\label{fig:basic_deadlock_detection}
+\end{figure}
+
+What the figure above shows is only valid if the position of D is not a goal. To be clear it is the two X's that touch D non-diagonally that is of interest.
 
 \end{document}
