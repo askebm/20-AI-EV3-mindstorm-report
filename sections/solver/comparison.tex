@@ -1,0 +1,95 @@
+% !TEX program = lualatex
+\documentclass[../../main.tex]{subfiles}
+\begin{document}
+
+Each solver has been tested 83 different maps pulled from this
+\href{https://github.com/bravegnu/python-sokoban}{github repository}.
+Not all maps in the repository is compatible with the map format provided in the project
+and therefore only the 83 maps that can be converted to the project map format has been used.\\
+
+For each map the following is tracked. Number of boxes, Elapsed real-time,
+Total number of CPU-seconds spent in kernel mode, Total number of CPU-seconds spent in user-mode,
+Solution found(bool).\\
+
+Each solver was terminated if the process took more than 10GB of RAM and is counted as not finding
+finding a solution.
+
+
+\begin{figure}[h]
+	\centering
+	\subfloat[
+	Breadth first
+	\label{fig:bf_boxplot_succes}
+	]{
+		\scalebox{0.5}{
+			\input{bf_plots/BoxPlotBySucces.pgf}
+		}
+	}
+	\subfloat[
+	A*
+	\label{fig:astar_boxplot_succes}
+	]{
+		\scalebox{0.5}{
+			\input{astar_plots/BoxPlotBySucces.pgf}
+		}
+	}
+	\caption{Box plots of each algorithm.}%
+	\label{fig:boxplots}
+\end{figure}
+
+As can be seen in Figure~\ref{fig:boxplots}, seems to behave very much the same way, the only
+difference being that A* has a higher mean. This indicates a suboptimal heuristic for the A*
+as a bad A* will be very exploring and use as much memory as breadth first.\\
+
+Looking at the solve time in Figure~\ref{fig:boxplots_time} there is a clear difference between
+Breadth First and A*. As can be seen A* spends more time solving the maps, but as shown in
+Table~\ref{tab:solutions}, A* solves one more map than breadth first.\\
+
+\begin{figure}[h]
+	\centering
+	\subfloat[
+	Breadth first
+	\label{fig:bf_boxplot_time}
+	]{
+		\scalebox{0.5}{
+			\input{plots/BFBoxPlotBoxesTime.pgf}
+		}
+	}
+	\subfloat[
+	A*
+	\label{fig:aster_boxplot_time}
+	]{
+		\scalebox{0.5}{
+			\input{plots/AstarBoxPlotBoxesTime.pgf}
+		}
+	}
+
+	\subfloat[
+	A* with same scale as Breadth First
+	\label{fig:aster_boxplot_time_bf_scale}
+	]{
+		\scalebox{0.5}{
+			\input{plots/AstarBoxPlotBoxesBFscale.pgf}
+		}
+	}
+	\caption{Box plots of each algorithm of time per box among the solved maps.}%
+	\label{fig:boxplots_time}
+\end{figure}
+
+
+\begin{table}[h]
+	\centering
+	\caption{Solutions Found}
+	\label{tab:solutions}
+	\begin{tabular}{lrrr}
+		\toprule
+	& Solution found  & Solution not found& Succes rate\\
+		A* & 21 & \directlua{tex.write(83-21)}& 25.30\%  \\
+		Breadth first & 20 & \directlua{tex.write(83-20)}& 24.10\%  \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
+\end{document}
