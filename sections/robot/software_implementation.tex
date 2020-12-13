@@ -1,0 +1,37 @@
+% !TEX program = lualatex
+\documentclass[../../main.tex]{subfiles}
+\begin{document}
+\subsection{Software implementation}%
+\label{sub:software_implementation}
+
+\subsubsection{Solution interpretor}%
+\label{ssub:solution_intepretor}
+
+The solution format provided for the project is shown in Table~\ref{tab:solution_format}.
+An example solution could be \texttt{ullldluRRRR}.
+This solution is is converted to \texttt{ullldlurrrR}. This is to utilise the uppercase letter to
+mean, push the can to the next cross and reverse back to previous cross.
+
+\begin{table}[h]
+	\centering
+	\caption{Solution format}
+	\label{tab:solution_format}
+	\begin{tabular}{*{5}{l}}
+		\toprule
+		Without pushing can & \tt u &\tt  l & \tt r & \tt d \\
+		While pushing can & \tt U & \tt L & \tt R & \tt D \\
+		\cmidrule{2-5}
+											& Up & Left & Right & Down\\
+											\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsubsection{Navigation}%
+\label{ssub:navigation}
+
+
+
+
+
+	
+\end{document}
