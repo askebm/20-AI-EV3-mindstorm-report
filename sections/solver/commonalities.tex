@@ -8,7 +8,7 @@ The state space of Sokoban has a branching factor of 4 as the robot can move to 
 
 Storing a state which includes all the box positions stored in a list and the player position is required to have 				sufficient 	information about a state. State and node is used interchangeably but refers to the same concept. The state is stored in a dictionary where the key is a list of strings of the levels layout. The node object itself is stored as the value. It is highly desirable that a state has a unique board position and a node also stores what node its parent and children are. \\
 
-When a path is constructed it has to be accounted for that there is a branching factor of 4 meaning that the delta move is either -1 or 1 in the x-axis or -1, 1 in the y-axis. Depending on what the delta move value is a character representing the direction will be appended to the solution string. If a box is moved in a specific move that character will be uppercase. \\
+When a path is constructed it has to be accounted for that there is a branching factor of 4 meaning that the delta move is either -1 or 1 in the x-axis or -1, 1 in the y-axis compared to the current node's position. Depending on what the delta move value is a character representing the direction will be appended to the solution string. If a box is moved in a specific move that character will be uppercase. \\
 
 The problem is created in the same manner in both solvers. It is required that a solution is defined which is that all the boxes in the level are on a goal. The solution is then compared to the hash as every node is visited. Goals, boxes and the player is also created based on the level string. Hashes, which is the dictionary key are also created in the same way between the solvers. 
 
