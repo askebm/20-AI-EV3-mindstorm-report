@@ -11,6 +11,8 @@ The solution format provided for the project is shown in Table~\ref{tab:solution
 An example solution could be \texttt{ullldluRRRR}.
 This solution is is converted to \texttt{ullldlurrrR}. This is to utilise the uppercase letter to
 mean, push the can to the next cross and reverse back to previous cross.
+This interpretor makes it so the robot is compliant with requirement \ref{ssub:map} while using
+a custom internal format.
 
 \begin{table}[h]
 	\centering
@@ -31,8 +33,9 @@ mean, push the can to the next cross and reverse back to previous cross.
 \label{ssub:navigation}
 
 The main code of the robot can be seen in Listing~\ref{lst:nav}.
-As can be seen it completes one action at the time.
-This is to keep everything simple and robust.
+As can be seen the robot completes one action at the time.
+This is to keep everything simple and robust
+as robustness is a part of requirement \ref{ssub:precision}.
 The only difference between an upper case action and a lower case action
 is that the robot will push the can on to the next cross and reverse back to the previous
 cross. This would not make sense to do at every time a can need to pushed if it is pushed in
@@ -66,7 +69,8 @@ def run(self):
 \subsubsection{Line follower}%
 \label{ssub:line_follower}
 
-As the robot needs to follow a line between crosses a line follower has been implemented.
+As the robot needs to follow a line between crosses as of requirement \ref{sub:sensing} and
+\ref{ssub:map}, a line follower has been implemented.
 It uses two color sensors to robustly follow the line and to detect
 when an intersection has been reach.\\
 The line follower turns with a constant velocity to not overshoot the yaw angle as
