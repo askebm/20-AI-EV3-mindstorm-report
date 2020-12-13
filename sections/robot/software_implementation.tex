@@ -30,21 +30,38 @@ mean, push the can to the next cross and reverse back to previous cross.
 \subsubsection{Navigation}%
 \label{ssub:navigation}
 
-An overview of how the robots navigates a solution can be seen below.
-\begin{minted}{python}
-for action in self.solution:
-		change_direction(action)
-		follow_line_until_cross()
-		if action.isupper():
-				follow_line_for_distance()
-				reverse_until_see_cross()
-stop()
-\end{minted}
-As can be seen, the focus of the robot code is to be simple and robust.
+The main code of the robot can be seen in Listing~\ref{lst:nav}.
+As can be seen it completes one action at the time.
+This is to keep everything simple and robust.
+The only difference between an upper case action and a lower case action
+is that the robot will push the can on to the next cross and reverse back to the previous
+cross. This would not make sense to do at every time a can need to pushed if it is pushed in
+the same direction, this is the reason the solution interpretor is implemented, as described in
+section \ref{ssub:solution_intepretor}.
 
-
-
-
+\begin{listing}
+	\caption{Navigation code}	
+	\label{lst:nav}
+	\begin{minted}{python}
+def run(self):
+		for action in self.solution:
+				self.change_dir(action.lower())
+				self.follow_line(
+								condition_func = follow_until_color,
+								sensor1=self.cL,
+								sensor2=self.cR )
+				if action.isupper():
+						self.tank.on_for_degrees(SpeedPercent(30),SpeedPercent(30),30)
+						self.follow_line(
+										condition_func=follow_for_distance,
+										distance=470 )
+						while self.cL.reflected_light_intensity  > self.c_thresh and \
+								self.cL.reflected_light_intensity > self.c_thresh :
+								self.tank.on(SpeedPercent(-30),SpeedPercent(-30))
+						self.tank.on_for_degrees(SpeedPercent(30),SpeedPercent(30),20)
+				self.tank.stop()
+	\end{minted}
+\end{listing}
 
 
 
