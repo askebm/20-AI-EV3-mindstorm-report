@@ -1,4 +1,3 @@
-% !TEX program = lualatex
 \documentclass[../../main.tex]{subfiles}
 \begin{document}
 
@@ -28,10 +27,6 @@ following the map.
 
 The sensors can be seen on figure \subref{fig:images/bottom}.
 
-To sense the can, a pressure sensor is mounted in the cage of the robot, as can be seen in figure
-\subref{fig:images/bottom}. To best detect the can the pressure sensors surface is increased by using
-a cog, as can be seen on figure \subref{fig:images/front}.\\
-
 The robot also able "sense" how far it has moving via the encoders in the motors.\\
 
 To navigate the map the robot relies on odometry and the color sensors to correct drift.
@@ -39,7 +34,6 @@ This limited sensing requires the robot to know its starting position. It also m
 to recover if lost.\\
 
 To account for the cans or the robot  not being in the exactly the right place, the inlet on the cage
-is wider than the cage itself. And also the pressure sensors will detect when the robot makes 
-contact with the can.
+is wider than the cage itself.
 	
 \end{document}
