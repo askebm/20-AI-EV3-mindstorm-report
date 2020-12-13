@@ -90,6 +90,14 @@ Table~\ref{tab:solutions}, A* solves one more map than breadth first.\\
 	\end{tabular}
 \end{table}
 
+\subsubsection{Discussion}%
+\label{ssub:discussion}
+As the solution is calculated offline there is argument to be made for using the solver that can
+solve the most maps, which here is A*.
 
+A* was expected to significantly outperform Breadth First, by the nature of it being able move
+more directly to the goal state without consuming a lot of memory.
+As it does not it indicates that there exists a better heuristic for A*.
+A more memory efficient alternative to A* star is IDA* which might be able solve more maps.
 
 \end{document}
