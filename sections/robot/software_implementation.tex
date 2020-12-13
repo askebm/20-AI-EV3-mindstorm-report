@@ -63,6 +63,20 @@ def run(self):
 	\end{minted}
 \end{listing}
 
+\subsubsection{Line follower}%
+\label{ssub:line_follower}
+
+As the robot needs to follow a line between crosses a line follower has been implemented.
+It uses two color sensors to robustly follow the line and to detect
+when an intersection has been reach.\\
+The line follower turns with a constant velocity to not overshoot the yaw angle as
+there is made no attempt to estimate where the line is spatially and the optimal robot
+yaw is therefor unknown.\\
+Detection of intersections is prioritised over line detection as the robot would otherwise
+have undefined behavior at intersections.\\
+The line follower is implemented such that it can be provided a condition function.
+To condition function has been implemented; \mintinline{python}{follow_until_color} and
+\mintinline{python}{follow_for_distance}.
 
 
 
