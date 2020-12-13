@@ -26,8 +26,24 @@ mean, push the can to the next cross and reverse back to previous cross.
 	\end{tabular}
 \end{table}
 
+
 \subsubsection{Navigation}%
 \label{ssub:navigation}
+
+An overview of how the robots navigates a solution can be seen below.
+\begin{minted}{python}
+for action in self.solution:
+		change_direction(action)
+		follow_line_until_cross()
+		if action.isupper():
+				follow_line_for_distance()
+				reverse_until_see_cross()
+stop()
+\end{minted}
+As can be seen, the focus of the robot code is to be simple and robust.
+
+
+
 
 
 
