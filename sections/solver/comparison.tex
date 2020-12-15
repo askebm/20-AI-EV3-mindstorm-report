@@ -12,6 +12,7 @@ Total number of CPU-seconds spent in kernel mode, Total number of CPU-seconds sp
 
 Each solver was terminated if the process took more than 10GB of RAM and is counted as not finding a solution.
 
+\newpage
 
 \begin{figure}[h]
 	\centering
@@ -49,7 +50,7 @@ Table~\ref{tab:solutions}, A* solves one more map than breadth first.\\
 	Breadth first
 	\label{fig:bf_boxplot_time}
 	]{
-		\scalebox{0.5}{
+		\scalebox{0.4}{
 			\input{plots/BFBoxPlotBoxesTime.pgf}
 		}
 	}
@@ -57,7 +58,7 @@ Table~\ref{tab:solutions}, A* solves one more map than breadth first.\\
 	A*
 	\label{fig:aster_boxplot_time}
 	]{
-		\scalebox{0.5}{
+		\scalebox{0.4}{
 			\input{plots/AstarBoxPlotBoxesTime.pgf}
 		}
 	}
@@ -66,14 +67,13 @@ Table~\ref{tab:solutions}, A* solves one more map than breadth first.\\
 	A* with same scale as Breadth First
 	\label{fig:aster_boxplot_time_bf_scale}
 	]{
-		\scalebox{0.5}{
+		\scalebox{0.4}{
 			\input{plots/AstarBoxPlotBoxesBFscale.pgf}
 		}
 	}
 	\caption{Box plots of each algorithm of time per box among the solved maps.}%
 	\label{fig:boxplots_time}
 \end{figure}
-
 
 \begin{table}[h]
 	\centering
@@ -87,6 +87,8 @@ Table~\ref{tab:solutions}, A* solves one more map than breadth first.\\
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+\newpage
 
 \subsubsection{Discussion}%
 \label{ssub:discussion}
