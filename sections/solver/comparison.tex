@@ -8,11 +8,9 @@ Not all maps in the repository is compatible with the map format provided in the
 and therefore only the 83 maps that can be converted to the project map format has been used.\\
 
 For each map the following is tracked. Number of boxes, Elapsed real-time,
-Total number of CPU-seconds spent in kernel mode, Total number of CPU-seconds spent in user-mode,
-Solution found(bool).\\
+Total number of CPU-seconds spent in kernel mode, Total number of CPU-seconds spent in user-mode and whether it found a Solution.\\
 
-Each solver was terminated if the process took more than 10GB of RAM and is counted as not finding
-finding a solution.
+Each solver was terminated if the process took more than 10GB of RAM and is counted as not finding a solution.
 
 
 \begin{figure}[h]
@@ -39,7 +37,7 @@ finding a solution.
 
 As can be seen in Figure~\ref{fig:boxplots}, seems to behave very much the same way, the only
 difference being that A* has a higher mean. This indicates a suboptimal heuristic for the A*
-as a bad A* will be very exploring and use as much memory as breadth first.\\
+as a bad A* will be explore a lot and use as much memory as breadth first.\\
 
 Looking at the solve time in Figure~\ref{fig:boxplots_time} there is a clear difference between
 Breadth First and A*. As can be seen A* spends more time solving the maps, but as shown in
